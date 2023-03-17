@@ -141,6 +141,7 @@ class _LoginWidgetState extends State<LoginWidget>{
 */
 class HomePage extends StatelessWidget {
   HomePage({super.key});
+  Color pageBackgroundColor = Color.fromARGB(255, 47, 69, 71);
   Color buttonBackroundColor = Color.fromARGB(255, 172, 180, 180);
   Color textColor =  Color.fromARGB(255, 63, 13, 13);
   Color iconColor = Color.fromARGB(255, 104, 0, 240);
@@ -151,7 +152,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('NACHO Home Page'),
-        backgroundColor:const Color.fromARGB(255, 47, 69, 71),
+        backgroundColor:pageBackgroundColor,
       ),
       body: Center( 
         child: Column(
@@ -177,29 +178,29 @@ class HomePage extends StatelessWidget {
         ElevatedButton.icon( //button to direct the user to the camera settings page
           icon: Icon(Icons.camera_indoor_rounded, color: iconColor, size: 50),
           style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
-          fixedSize: const Size(200, 75)),
+          fixedSize: const Size(250, 75)),
           label: Text('CAMERAS', style: TextStyle(color: textColor, fontSize: 20)),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const CameraSettingPage()),
+              MaterialPageRoute(builder: (context) => CameraSettingPage()),
             );
           },
         ),
         ElevatedButton.icon( //button to direct the user to the live feed page
           icon: Icon(Icons.video_camera_back_rounded, color: iconColor, size: 50),
           style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
-          fixedSize: const Size(200, 75)),
+          fixedSize: const Size(250, 75)),
           onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const LiveFeedPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LiveFeedPage()));
         }, label: Text('LIVE FEED', style: TextStyle(color: textColor,fontSize: 20))
         ),
         ElevatedButton.icon( //button to direct the user to the library page
           icon: Icon(Icons.library_books_rounded, color: iconColor, size: 50),
           style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
-          fixedSize: const Size(200, 75)),
+          fixedSize: const Size(250, 75)),
           onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const LibraryPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LibraryPage()));
         }, label: Text('LIBRARY', style: TextStyle(color: textColor, fontSize: 20))
         ),
         ElevatedButton.icon( //button to sign out
@@ -224,47 +225,56 @@ class HomePage extends StatelessWidget {
 *ignore: must_be_immutable
 */
 class CameraSettingPage extends StatelessWidget {
-  const CameraSettingPage({super.key});
- 
+  CameraSettingPage({super.key});
+  Color pageBackgroundColor = Color.fromARGB(255, 47, 69, 71);
+  Color buttonBackroundColor = Color.fromARGB(255, 172, 180, 180);
+  Color textColor =  Color.fromARGB(255, 63, 13, 13);
+  Color iconColor = Color.fromARGB(255, 104, 0, 240);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Camera Settings'),
+        backgroundColor: pageBackgroundColor,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 10, 100, 203),
+        ElevatedButton.icon(
+          icon: Icon(Icons.arrow_back, color: iconColor, size: 20),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
           fixedSize: const Size(125, 50)), 
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Home'),
+          label: Text('Home', style: TextStyle(color: textColor, fontSize: 24)),
         ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+        ElevatedButton.icon(
+          icon: Icon(Icons.camera_indoor_rounded, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 1
           }, 
-          child: const Text('Camera 1')),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+          label: Text('Camera 1',style: TextStyle(color: textColor, fontSize: 24))),
+        ElevatedButton.icon(
+          icon: Icon(Icons.camera_indoor_rounded, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 2
           }, 
-          child: const Text('Camera 2')),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+          label: Text('Camera 2',style: TextStyle(color: textColor, fontSize: 24))),
+        ElevatedButton.icon(
+          icon: Icon(Icons.camera_indoor_rounded, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 3
           }, 
-          child: const Text('Camera 3')),
+          label: Text('Camera 3',style: TextStyle(color: textColor, fontSize: 24))),
         ]),
       ),
     );
@@ -277,47 +287,56 @@ class CameraSettingPage extends StatelessWidget {
 * @author: vilmos feher
 */
 class LiveFeedPage extends StatelessWidget {
-  const LiveFeedPage({super.key});
+  LiveFeedPage({super.key});
+  Color pageBackgroundColor = Color.fromARGB(255, 47, 69, 71);
+  Color buttonBackroundColor = Color.fromARGB(255, 172, 180, 180);
+  Color textColor =  Color.fromARGB(255, 63, 13, 13);
+  Color iconColor = Color.fromARGB(255, 104, 0, 240);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Live Video Feed'),
+        backgroundColor: pageBackgroundColor,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-          ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 10, 100, 203),
+        ElevatedButton.icon(
+          icon: Icon(Icons.arrow_back, color: iconColor, size: 20),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
           fixedSize: const Size(125, 50)), 
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Home'),
+          label: Text('Home', style: TextStyle(color: textColor, fontSize: 24)),
         ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+        ElevatedButton.icon(
+          icon: Icon(Icons.photo_camera_front, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 1
           }, 
-          child: const Text('Camera 1')),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+          label: Text('Camera 1',style: TextStyle(color: textColor, fontSize: 24))),
+        ElevatedButton.icon(
+          icon: Icon(Icons.photo_camera_front, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 2
           }, 
-          child: const Text('Camera 2')),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 24, 36, 51),
-          fixedSize: const Size(100, 50)),
+          label: Text('Camera 2',style: TextStyle(color: textColor, fontSize: 24))),
+        ElevatedButton.icon(
+          icon: Icon(Icons.photo_camera_front, color: iconColor, size: 40),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
+          fixedSize: const Size(200, 75)),
           onPressed: (){
-            //
+            //link to camera settings 3
           }, 
-          child: const Text('Camera 3')),
+          label: Text('Camera 3',style: TextStyle(color: textColor, fontSize: 24))),
       ]),
       ),
     );
@@ -330,27 +349,33 @@ class LiveFeedPage extends StatelessWidget {
 * @author: vilmos feher
 */
 class LibraryPage extends StatelessWidget {
-  const LibraryPage({super.key});
+  LibraryPage({super.key});
+  Color pageBackgroundColor = Color.fromARGB(255, 47, 69, 71);
+  Color buttonBackroundColor = Color.fromARGB(255, 172, 180, 180);
+  Color textColor =  Color.fromARGB(255, 63, 13, 13);
+  Color iconColor = Color.fromARGB(255, 104, 0, 240);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Video Library'),
+        backgroundColor: pageBackgroundColor,
       ),
       body: Center(
         child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 10, 100, 203),
+        ElevatedButton.icon(
+          icon: Icon(Icons.arrow_back, color: iconColor, size: 20),
+          style: ElevatedButton.styleFrom(backgroundColor: buttonBackroundColor,
           fixedSize: const Size(125, 50)), 
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Home'),
-          ),
-        const Text('No items in library'),
+          label: Text('Home', style: TextStyle(color: textColor, fontSize: 24)),
+        ),
+        Text('No items in library', style: TextStyle(color: textColor, fontSize: 24)),
         ],
         )
       ),
@@ -366,6 +391,7 @@ class LibraryPage extends StatelessWidget {
 class UserSettingsPage extends StatelessWidget{
   UserSettingsPage({super.key});
   final user = FirebaseAuth.instance.currentUser!;
+  Color pageBackgroundColor = Color.fromARGB(255, 47, 69, 71);
   Color buttonBackroundColor = Color.fromARGB(255, 172, 180, 180);
   Color textColor =  Color.fromARGB(255, 63, 13, 13);
   Color iconColor = Color.fromARGB(255, 104, 0, 240);
@@ -375,6 +401,7 @@ class UserSettingsPage extends StatelessWidget{
       return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
+        backgroundColor: pageBackgroundColor,
       ),
       body: Center(
         child: Column(
@@ -382,6 +409,7 @@ class UserSettingsPage extends StatelessWidget{
           children: <Widget>[
             Text('Owner: '),
             Text(user.email!, style: TextStyle(color: textColor, fontSize: 28, fontWeight: FontWeight.bold,)),
+            Text('Version : 1.3', style: TextStyle(color: textColor, fontSize: 28, fontWeight: FontWeight.bold,)),
           ],
         )
       ),
